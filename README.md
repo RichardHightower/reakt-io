@@ -14,3 +14,5 @@ other Nektwork implementations.
 
 
 
+
+Libraries like QBit, Elekt, Lokate can use Nektwork and they will work with other libs. 
