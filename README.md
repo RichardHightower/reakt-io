@@ -9,3 +9,5 @@ It is an common interface API that is an IO non-blocking and reactive.
 
 It uses Reakt Callbacks, Promises and Streams. 
 
+
+Libraries like QBit, Elekt, Lokate can use Nektwork and they will work with other libs. 
