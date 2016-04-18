@@ -2,11 +2,12 @@ package io.advantageous.nektwork.http;
 
 import io.advantageous.nektwork.Buffer;
 import io.advantageous.nektwork.MultiMap;
-
 import io.advantageous.reakt.Callback;
-
+import io.advantageous.reakt.promise.Promise;
+import io.advantageous.reakt.promise.Promises;
 import java.io.Closeable;
 import java.nio.charset.Charset;
+import java.time.Duration;
 
 
 /**
@@ -18,7 +19,6 @@ public interface HttpClientRequest extends Closeable{
 
     HttpClientRequest write(Buffer data);
     HttpClientRequest setWriteQueueMaxSize(int maxSize);
-
 
     HttpClientRequest getResponse(Callback<HttpClientResponse> handler);
 
@@ -39,8 +39,38 @@ public interface HttpClientRequest extends Closeable{
     void writeEnd(String chunk);
     void writeEnd(String chunk, Charset encoding);
     void writeEnd(Buffer chunk);
+    default HttpClientRequest end() {
+        close();
+        return this;
+    }
     void close();
     HttpClientRequest setTimeout(long timeoutMs);
+
+
+
+    /** Blocking call for testing and legacy integration.
+     * Do not use this for async processing.
+     * Do not run this in Vert.x if you are running inside of a verticle.
+     * @return HttpClientResponse
+     */
+    default HttpClientResponse getResponse() {
+        final Promise<HttpClientResponse> promise = Promises.blockingPromise();
+        getResponse(promise);
+        return promise.get();
+    }
+
+    /** Blocking call for testing and legacy integration.
+     * Do not use this for async processing.
+     * Do not run this in Vert.x if you are running inside of a verticle.
+     * @param timeout timeout duration
+     * @return HttpClientResponse
+     */
+    default HttpClientResponse getResponse(Duration timeout) {
+        final Promise<HttpClientResponse> promise = Promises.blockingPromise(timeout);
+        getResponse(promise);
+        return promise.get();
+    }
+
 
 }
 
