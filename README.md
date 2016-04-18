@@ -1,4 +1,4 @@
-## Reakt IO
+## Nektwork is Reakt IO
 
 IO Library that provides common interface for doing reactive IO in Java.
 
