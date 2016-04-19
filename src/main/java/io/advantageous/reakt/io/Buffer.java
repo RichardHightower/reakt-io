@@ -201,7 +201,7 @@ public interface Buffer {
      * @param encoding      string encoding, e.g., UTF-8
      * @return this, fluent API
      */
-    String getString(int startPosition, int endPosition, String encoding);
+    String getString(int startPosition, int endPosition, Charset encoding);
 
     /**
      * @param startPosition start position
@@ -540,5 +540,7 @@ public interface Buffer {
      */
     Buffer slice(int startPosition, int endPosition);
 
+
+    <T> T getUnderlyingBuffer();
 
 }
