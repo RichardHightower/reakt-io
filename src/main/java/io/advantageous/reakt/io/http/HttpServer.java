@@ -1,12 +1,13 @@
 package io.advantageous.reakt.io.http;
 
 
-import com.sun.xml.internal.ws.Closeable;
 import io.advantageous.reakt.io.http.websocket.ServerWebSocket;
 import io.advantageous.reakt.io.spi.FactoryHelper;
 import io.advantageous.reakt.io.spi.HttpServerFactory;
 import io.advantageous.reakt.Callback;
 import io.advantageous.reakt.Stream;
+
+import java.io.Closeable;
 
 
 /**

@@ -29,17 +29,24 @@ public interface Buffer {
 
     /**
      * Returns a {@code String} representation of the Buffer with the {@code UTF-8 }encoding
+     *
+     * @return string
      */
     String toString();
 
     /**
-     * Returns a {@code String} representation of the Buffer with the encoding specified by {@code enc}
+     * Returns a string {@code String} version of the Buffer with the encoding specified by {@code encoding}
+     *
+     * @param encoding string encoding
+     * @return String
      */
     String toString(Charset encoding);
 
     /**
      * Get a byte
      *
+     * @param position position into buffer
+     * @return byte
      * @throws IndexOutOfBoundsException if position out of range.
      */
     byte getByte(int position);
@@ -47,6 +54,8 @@ public interface Buffer {
     /**
      * Get unsigned byte
      *
+     * @param position position into buffer
+     * @return unsigned byte
      * @throws IndexOutOfBoundsException if position out of range
      */
     short getUnsignedByte(int position);
@@ -54,6 +63,8 @@ public interface Buffer {
     /**
      * Get Int
      *
+     * @param position position into buffer
+     * @return int
      * @throws IndexOutOfBoundsException if position out of range
      */
     int getInt(int position);
@@ -61,6 +72,8 @@ public interface Buffer {
     /**
      * Get Unsigned Byte
      *
+     * @param position position into buffer
+     * @return unsighed int at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     long getUnsignedInt(int position);
@@ -68,13 +81,17 @@ public interface Buffer {
     /**
      * Get Long.
      *
+     * @param position position into buffer
+     * @return long at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     long getLong(int position);
 
     /**
-     * Get Double
+     * Get Double.
      *
+     * @param position position into buffer
+     * @return double at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     double getDouble(int position);
@@ -82,13 +99,17 @@ public interface Buffer {
     /**
      * Get Float
      *
+     * @param position position into buffer
+     * @return float at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     float getFloat(int position);
 
     /**
-     * Get Short
+     * Get Short.
      *
+     * @param position position into buffer
+     * @return short at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     short getShort(int position);
@@ -96,12 +117,16 @@ public interface Buffer {
     /**
      * Get Unsigned short.
      *
+     * @param position position into buffer
+     * @return unsigned short at position
      * @throws IndexOutOfBoundsException if position out of range
      */
     int getUnsignedShort(int position);
 
     /**
      * Gets entire buffer as byte array.
+     *
+     * @return all the bytes in the buffer as a byte array
      */
     byte[] getBytes();
 
@@ -110,6 +135,7 @@ public interface Buffer {
      *
      * @param startPosition start Position byte location
      * @param endPosition   end Position byte location
+     * @return bytes from startPosition up to but not including endPosition
      */
     byte[] getBytes(int startPosition, int endPosition);
 
@@ -304,10 +330,11 @@ public interface Buffer {
     /**
      * Append value to end of Buffer
      *
-     * @param value value
+     * @param value    value
+     * @param encoding encoding
      * @return this, fluent API
      */
-    Buffer appendString(String value, String encoding);
+    Buffer appendString(String value, Charset encoding);
 
 
     /**
@@ -331,7 +358,8 @@ public interface Buffer {
     /**
      * Set value into Buffer at position.
      *
-     * @param value value
+     * @param position position in this buffer
+     * @param value    value
      * @return this, fluent API
      */
     Buffer setUnsignedByte(int position, short value);
@@ -420,9 +448,10 @@ public interface Buffer {
      *
      * @param position position into buffer
      * @param string   string
+     * @param encoding encoding
      * @return this, fluent API
      */
-    Buffer setString(int position, String string, String encoding);
+    Buffer setString(int position, String string, Charset encoding);
 
     /**
      * Set other buffer into this Buffer at position..
