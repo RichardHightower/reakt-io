@@ -6,10 +6,11 @@ import java.io.Closeable;
 
 /**
  * This interface was heavily influenced by Vert.x
+ *
  * @author Rick Hightower
  */
 @SuppressWarnings("unused")
-public interface HttpClient extends Closeable{
+public interface HttpClient extends Closeable {
 
 
     /**

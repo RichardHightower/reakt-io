@@ -1,21 +1,31 @@
 package io.advantageous.nektwork;
 
 
+import io.advantageous.nektwork.spi.BufferFactory;
+import io.advantageous.nektwork.spi.FactoryHelper;
+
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
 /**
  * This interface is heavily influenced by the Buffer interface in Netty and Vert.x.
  * A Buffer is bytes of data from a network packet or some other stream.
- *
+ * <p>
  * Streaming IO APIs will pass around buffers of data.
- *
+ * <p>
  * Buffers will be implemented by libraries like Undertow, Netty, Vert.x and Conekt.
  *
  * @author Rick Hightower
  */
 @SuppressWarnings("unused")
 public interface Buffer {
+
+    BufferFactory bufferFactory = FactoryHelper.loadFactory(BufferFactory.class);
+
+    static BufferFactory getBufferFactory() {
+        return bufferFactory;
+    }
+
 
     /**
      * Returns a {@code String} representation of the Buffer with the {@code UTF-8 }encoding

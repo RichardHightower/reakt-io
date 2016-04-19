@@ -5,11 +5,12 @@ import java.util.*;
 
 /**
  * This interface was heavily influenced by Vert.x
+ *
  * @author Rick Hightower
  */
 public interface MultiMap<K, V> extends Iterable<Map.Entry<K, Collection<V>>>, Map<K, V> {
 
-        MultiMap EMPTY = new MultiMap() {
+    MultiMap EMPTY = new MultiMap() {
 
         private final Map empty = Collections.emptyMap();
 

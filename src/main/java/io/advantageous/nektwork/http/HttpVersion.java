@@ -3,6 +3,7 @@ package io.advantageous.nektwork.http;
 
 /**
  * This  was heavily influenced by Vert.x
+ *
  * @author Rick Hightower
  */
 @SuppressWarnings("unused")
