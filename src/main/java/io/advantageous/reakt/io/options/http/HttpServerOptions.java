@@ -114,8 +114,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setPort(int port) {
-        return super.setPort(port);
+    public HttpServerOptions setPort(int port) {
+        super.setPort(port);
+        return this;
     }
 
     @Override
@@ -129,8 +130,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setHost(String host) {
-        return super.setHost(host);
+    public HttpServerOptions setHost(String host) {
+        super.setHost(host);
+        return this;
     }
 
     @Override
@@ -139,8 +141,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setAcceptBacklog(int acceptBacklog) {
-        return super.setAcceptBacklog(acceptBacklog);
+    public HttpServerOptions setAcceptBacklog(int acceptBacklog) {
+        super.setAcceptBacklog(acceptBacklog);
+        return this;
     }
 
     @Override
@@ -149,8 +152,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setClientAuth(ClientAuth clientAuth) {
-        return super.setClientAuth(clientAuth);
+    public HttpServerOptions setClientAuth(ClientAuth clientAuth) {
+        super.setClientAuth(clientAuth);
+        return this;
     }
 
     @Override
@@ -159,8 +163,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setTcpNoDelay(boolean tcpNoDelay) {
-        return super.setTcpNoDelay(tcpNoDelay);
+    public HttpServerOptions setTcpNoDelay(boolean tcpNoDelay) {
+        super.setTcpNoDelay(tcpNoDelay);
+        return this;
     }
 
     @Override
@@ -169,8 +174,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setTcpKeepAlive(boolean tcpKeepAlive) {
-        return super.setTcpKeepAlive(tcpKeepAlive);
+    public HttpServerOptions setTcpKeepAlive(boolean tcpKeepAlive) {
+        super.setTcpKeepAlive(tcpKeepAlive);
+        return this;
     }
 
     @Override
@@ -179,8 +185,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setSoLinger(int soLinger) {
-        return super.setSoLinger(soLinger);
+    public HttpServerOptions setSoLinger(int soLinger) {
+        super.setSoLinger(soLinger);
+        return this;
     }
 
     @Override
@@ -189,8 +196,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setUsePooledBuffers(boolean usePooledBuffers) {
-        return super.setUsePooledBuffers(usePooledBuffers);
+    public HttpServerOptions setUsePooledBuffers(boolean usePooledBuffers) {
+        super.setUsePooledBuffers(usePooledBuffers);
+        return this;
     }
 
     @Override
@@ -199,8 +207,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setIdleTimeout(int idleTimeout) {
-        return super.setIdleTimeout(idleTimeout);
+    public HttpServerOptions setIdleTimeout(int idleTimeout) {
+        super.setIdleTimeout(idleTimeout);
+        return this;
     }
 
     @Override
@@ -209,8 +218,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setSsl(boolean ssl) {
-        return super.setSsl(ssl);
+    public HttpServerOptions setSsl(boolean ssl) {
+        super.setSsl(ssl);
+        return this;
     }
 
     @Override
@@ -219,8 +229,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setKeyCertOptions(KeyCertOptions keyCertOptions) {
-        return super.setKeyCertOptions(keyCertOptions);
+    public HttpServerOptions setKeyCertOptions(KeyCertOptions keyCertOptions) {
+        super.setKeyCertOptions(keyCertOptions);
+        return this;
     }
 
     @Override
@@ -229,8 +240,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setTrustOptions(TrustOptions trustOptions) {
-        return super.setTrustOptions(trustOptions);
+    public HttpServerOptions setTrustOptions(TrustOptions trustOptions) {
+        super.setTrustOptions(trustOptions);
+        return this;
     }
 
     @Override
@@ -239,8 +251,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setEnabledCipherSuites(Set<String> enabledCipherSuites) {
-        return super.setEnabledCipherSuites(enabledCipherSuites);
+    public HttpServerOptions setEnabledCipherSuites(Set<String> enabledCipherSuites) {
+        setEnabledCipherSuites(enabledCipherSuites);
+        return this;
     }
 
     @Override
@@ -249,8 +262,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setCrlPaths(ArrayList<String> crlPaths) {
-        return super.setCrlPaths(crlPaths);
+    public HttpServerOptions setCrlPaths(ArrayList<String> crlPaths) {
+        super.setCrlPaths(crlPaths);
+        return this;
     }
 
     @Override
@@ -259,8 +273,9 @@ public class HttpServerOptions extends NetServerOptions {
     }
 
     @Override
-    public NetServerOptions setCrlValues(ArrayList<Buffer> crlValues) {
-        return super.setCrlValues(crlValues);
+    public HttpServerOptions setCrlValues(ArrayList<Buffer> crlValues) {
+        super.setCrlValues(crlValues);
+        return this;
     }
 
     @Override
